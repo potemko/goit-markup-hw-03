@@ -5,9 +5,38 @@
   --white-text-color: #ffffff;
   --grey-text-color: #757575;
 }
+::after,
+::before {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ol,
+ul {
+  margin: 0px;
+  padding-left: 0px;
+}
+.page-header {
+  display: block;
 }
 
 .header-logo {
@@ -18,17 +47,40 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--accent-color);
+  display: block;
+}
+.footer-logo {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  color: var(--accent-color);
+  display: block;
+  padding-top: 60px;
 }
 
 .logo-span {
   color: var(--title-text-color);
 }
+.logo-footer {
+  color: var(--white-text-color);
+}
 
 .list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-left: 93px;
+}
+.list-style {
   list-style: none;
 }
 .link {
   text-decoration: none;
+  display: block;
+  list-style: none;
 }
 .header-link {
   text-decoration: none;
@@ -37,16 +89,26 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
+
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
+
 .current {
   color: var(--accent-color);
 }
+
 .header-contact {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: #757575;
+
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 .header-link:hover,
 .header-link:focus,
@@ -55,6 +117,39 @@ body {
 .footer-contact:hover,
 .footer-contact:focus {
   color: var(--accent-color);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  border-bottom: 1px solid #ececec;
+}
+
+.header-nav .header-item:not(:last-child) {
+  margin-right: 50px;
+  padding-inline-start: 0;
+}
+.header-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: auto;
+}
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*хедер*/
+.container-hero {
+  background-color: #2f303a;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  text-align: center;
 }
 .footer-address {
   font-weight: 400;
@@ -76,14 +171,54 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  display: flex;
+  display: inline-block;
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
   color: #ffffff;
   background-color: #2196f3;
   cursor: pointer;
+  border-radius: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-top: 30px;
 }
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  justify-content: center;
+}
+.section-team {
+  padding-top: 94px;
+  background-color: #f5f4fa;
+}
+.main-liest {
+  display: flex;
+}
+
+.main-item {
+  width: 270px;
+}
+.main-item:not(:first-child) {
+  margin-left: 30px;
+}
+.list-item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.list-benefits {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.li-benefits:not(:first-child) {
+  margin-left: 30px;
+}
+
 .main-subtitle {
   font-weight: 700;
   font-size: 14px;
@@ -93,12 +228,17 @@ body {
   color: var(--title-text-color);
 }
 .main-text {
-  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  line-height: 1.71;
+  line-height: 24px;
   letter-spacing: 0.03em;
-  color: var(--grey-text-color);
+  color: #757575;
+  padding-top: 10px;
 }
+.main-benefits {
+  margin-top: 94px;
+}
+
 .main-benefits,
 .main-team {
   font-weight: 700;
@@ -107,25 +247,47 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+  margin-bottom: 50px;
 }
 .main-liest {
   list-style: none;
+  flex-basis: calc(100% /);
 }
 .team-list {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-  text-align: center;
+
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+
+  padding-top: 30px;
+}
+.team-foto:not(:first-child) {
+  margin-left: 30px;
+}
+.card {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+
+  background: #ffffff;
+}
+
+.team-text-info {
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 .team-desc {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  text-align: center;
+
   letter-spacing: 0.03em;
   color: var(--grey-text-color);
+}
+.team-li {
+  text-align: center;
+  display: flex;
 }
 .footer-address {
   font-weight: 400;
@@ -141,9 +303,12 @@ body {
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
 }
-.hero,
+
 .footer-info {
   background-color: #2f303a;
+}
+.footer-portfolio {
+  margin-top: 94px;
 }
 .footer-address:hover,
 .footer-address:focus {
@@ -161,9 +326,16 @@ body {
   color: #212121;
   font-family: inherit;
   text-decoration: none;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 22px;
+  padding-right: 22px;
+  cursor: pointer;
 }
 .portfolio-btn {
   background-color: #f5f4fa;
+  border: #f5f4fa;
+  border-radius: 4px;
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
@@ -179,6 +351,7 @@ body {
   line-height: 2;
   letter-spacing: 0.06em;
   color: #212121;
+  padding-left: 20px;
 }
 .list-aside {
   font-weight: 400;
@@ -186,4 +359,36 @@ body {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: #757575;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+.container-block {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+/*Portfolio*/
+.list-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -20px;
+  margin-left: -20px;
+}
+
+.list-portfolio > .item-portfolio {
+  flex-basis: calc(100% / 3 -20px);
+
+  border: 1px solid #eeeeee;
+  margin-left: 20px;
+  margin-top: 20px;
+  max-width: 100%;
+}
+.list-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 94px;
+  margin-bottom: 50px;
+}
+.work-btn:not(:first-child) {
+  margin-left: 8px;
 }
