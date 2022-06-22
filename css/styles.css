@@ -225,6 +225,7 @@ ul {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--title-text-color);
+  margin-bottom: 10px;
 }
 .main-text {
   font-family: 'Roboto', sans-serif;
@@ -232,7 +233,6 @@ ul {
   line-height: 24px;
   letter-spacing: 0.03em;
   color: #757575;
-  padding-top: 10px;
 }
 
 .main-benefits,
@@ -243,7 +243,7 @@ ul {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 .main-liest {
   list-style: none;
@@ -353,7 +353,6 @@ ul {
   line-height: 2;
   letter-spacing: 0.06em;
   color: #212121;
-  padding-left: 20px;
 }
 .list-aside {
   font-weight: 400;
@@ -361,13 +360,15 @@ ul {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: #757575;
-  margin-bottom: 20px;
-  padding-left: 20px;
 }
 .container-block {
   display: block;
-  padding-top: 20px;
+  margin-top: 20px;
 }
+.container-block > .adres-liest:not(:first-child) {
+  margin-top: 9px;
+}
+
 /*Portfolio*/
 .list-portfolio {
   display: flex;
@@ -397,4 +398,5 @@ ul {
   padding-bottom: 20px;
   background: #ffffff;
   border: 1px solid #eeeeee;
+  padding-left: 20px;
 }
